@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Folder Structure History</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+  <div class="container p-3">
+    <div class="d-flex align-items-center mb-3">
+      <button class="btn btn-sm me-2" id="backToPopupBtn">
+        <i class="bi bi-arrow-left"></i>
+      </button>
+      <h5 class="m-0 flex-grow-1">History</h5>
+      <button class="btn btn-outline-danger btn-sm ms-auto" id="clearHistoryBtn" title="Clear History">
+        <i class="bi bi-trash"></i> Clear History
+      </button>
+    </div>
+    <div id="historyList" class="history-page"></div>
+  </div>
+  <script src="history.js"></script>
+</body>
+</html>
