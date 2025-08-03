@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "FolderMap",
+  "version": "1.0",
+  "description": "Create and download folder structures as images",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Folder Structure Generator"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}

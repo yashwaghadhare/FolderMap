@@ -1,0 +1,363 @@
+/* Empty structure message styling */
+.empty-structure-message {
+  color: #6c757d;
+  font-style: italic;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 15px;
+}
+body {
+  width: 350px;
+  min-height: 400px;
+}
+
+#controls {
+  display: flex;
+  gap: 8px;
+}
+
+#controls .btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#controls .btn i {
+  font-size: 1.2rem;
+}
+
+.btn-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.btn-toggle:hover {
+  color: #0d6efd;
+}
+
+.btn-toggle i {
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+.btn-toggle i.rotate-icon {
+  animation: rotateIcon 0.2s ease;
+}
+
+@keyframes rotateIcon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.folder, .file {
+  margin-left: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+}
+
+.folder > div:not(.item-content), .file {
+  position: relative;
+}
+
+.folder > div:not(.item-content)::before, .file::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #dee2e6;
+}
+
+.folder > div:not(.item-content)::after, .file::after {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  width: 16px;
+  height: 2px;
+  background: #dee2e6;
+}
+
+.folder > .item-content, .file > .item-content {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.folder > .item-content:hover, .file > .item-content:hover {
+  border-color: #dee2e6;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  background-color: #f8f9fa;
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.item-content::before {
+  /* removed emoji icon */
+  display: none;
+}
+
+.folder > .item-content::before {
+  /* removed emoji icon */
+  display: none;
+}
+
+.file > .item-content::before {
+  /* removed emoji icon */
+  display: none;
+}
+.folder-icon, .file-icon {
+  font-size: 18px;
+  margin-right: 8px;
+  color: #f7b731;
+  flex-shrink: 0;
+}
+.file-icon {
+  color: #6c757d;
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  width: 100%;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.item-content:hover {
+  background-color: #f8f9fa;
+}
+
+.item-content span {
+  flex-grow: 1;
+  font-size: 14px;
+  color: #212529;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actions-wrapper {
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.btn-more {
+  padding: 2px 6px;
+  color: #6c757d;
+  border: none;
+  background: none;
+  transition: color 0.2s;
+}
+
+.btn-more:hover {
+  color: #000;
+}
+
+.actions {
+  position: absolute;
+  display: none;
+  background: white;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  padding: 4px 0;
+  min-width: 120px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  z-index: 1000;
+  margin-top: -4px;
+}
+
+.actions button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 6px 12px;
+  border: none;
+  background: none;
+  font-size: 12px;
+  color: #212529;
+  transition: background-color 0.2s;
+}
+
+.actions button:hover {
+  background-color: #f8f9fa;
+  color: inherit !important;
+}
+
+.actions button i {
+  margin-right: 8px;
+  width: 16px;
+  color: #6c757d;
+  flex-shrink: 0;
+}
+
+.actions button span {
+  white-space: nowrap;
+}
+
+.actions button.btn-add-file i {
+  color: #0d6efd;
+}
+
+.actions button.btn-add-folder i {
+  color: #198754;
+}
+
+.actions button.btn-rename i {
+  color: #6c757d;
+}
+
+.actions button.btn-delete i {
+  color: #dc3545;
+}
+
+.actions button:hover i {
+  color: inherit;
+}
+
+.name-input {
+  padding: 4px 8px;
+  margin: 2px 0;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.name-input:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+  outline: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+#historyDropdown {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  padding: 0;
+  margin-bottom: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.history-header {
+  padding: 8px 12px;
+  font-weight: 500;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.history-item {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+#historyList {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.history-item:hover {
+  background-color: #f8f9fa;
+}
+
+.history-item.empty {
+  color: #6c757d;
+  font-style: italic;
+  padding: 12px;
+}
+
+.history-name {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.history-time {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.history-page {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.history-card:hover {
+  border-color: #dee2e6;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  background-color: #f8f9fa;
+}
+
+.history-card .history-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #212529;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.history-card .history-time {
+  font-size: 12px;
+  color: #6c757d;
+}
